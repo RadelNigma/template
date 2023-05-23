@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-client
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+server:
+  port: 8889
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+#https://github:
+#  com/NikReDMooN/Java_Advance_4_1_2/blob/master/config-client/src/main/resources/application:
+#    yaml:

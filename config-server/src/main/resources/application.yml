@@ -3,6 +3,16 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri:
+            uri: https://github.com/NikReDMooN/euruka-config
+            searchPaths: "/ms-config-properties/{application}/{profile}"
+            default-label: main
 eureka:
   client:
     serviceUrl:
