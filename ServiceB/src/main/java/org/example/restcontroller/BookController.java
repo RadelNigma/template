@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/books")
 public class BookController {
 
-    @GetMapping
+    @GetMapping("/name")
     public String getString() {
         return "My String from feign client";
+    }
+
+    @GetMapping("/address")
+    public String getAddress() {
+        return "My Address from feign client";
     }
 }
