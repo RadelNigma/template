@@ -15,7 +15,7 @@ public class FeignDemoController {
 
     @GetMapping("/user-name")
     public String getUserName() {
-      return  feignServiceUtil.getString();
+      return  feignServiceUtil.getName();
     }
 
     @GetMapping("/user-address")

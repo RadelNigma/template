@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(name = "service-b")
 public interface FeignServiceUtil {
-    @GetMapping("/api/books/user")
-    String getString();
+    @GetMapping("/api/books/name")
+    String getName();
 
     @GetMapping("/api/books/address")
     String getAddress();

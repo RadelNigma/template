@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @GetMapping("/name")
-    public String getString() {
-        return "My String from feign client";
+    public String getName() {
+        return "My Name from feign client";
     }
 
     @GetMapping("/address")
