@@ -18,6 +18,6 @@ eureka:
 #  client:
 #    serviceUrl:
 #      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-#  instance:
+#  instance  ми-=-и ммисмис
 #    preferIpAddress: true
 #    lease-renewal-interval-in-seconds: 30
