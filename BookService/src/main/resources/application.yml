@@ -1,11 +1,11 @@
 spring:
   application:
     name: book-service
-#  data:
-#    mongodb:
-#      host: localhost
-#      port: 27017
-#      database: books
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: books
 server:
   port: 8877
 eureka:

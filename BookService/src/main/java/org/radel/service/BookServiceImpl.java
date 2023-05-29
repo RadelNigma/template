@@ -1,18 +1,16 @@
-package service;
+package org.radel.service;
 
-import model.Book;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.radel.model.Book;
+import org.radel.repository.BookRepo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repository.BookRepo;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BookServiceImpl implements BookService{
-
+public class BookServiceImpl implements BookService {
     private final BookRepo bookRepo;
 
     public BookServiceImpl(BookRepo bookRepo) {
@@ -20,9 +18,10 @@ public class BookServiceImpl implements BookService{
     }
 
     private static List<Book> items = new ArrayList<>();
+
     static {
-        items.add(new Book("1","Мастер и Маргарита","драма","sss"));
-        items.add(new Book("2","Wind","blockbusters","eee"));
+        items.add(new Book("1", "Мастер и Маргарита", "драма", "sss"));
+        items.add(new Book("2", "Wind", "blockbusters", "eee"));
     }
 
     @Override
@@ -31,8 +30,9 @@ public class BookServiceImpl implements BookService{
         return bookRepo.findAll();
     }
 
-    @PostConstruct
-    public void init() {
-       bookRepo.saveAll(items);
-    }
+//    @PostConstruct
+//    public void init() {
+//        bookRepo.saveAll(items);
+//    }
 }
+

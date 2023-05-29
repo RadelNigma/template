@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/api/client")
 public class ClientRestController {
 
-    @Autowired
-    FeignServiceUtil feignServiceUtil;
+  private final FeignServiceUtil feignServiceUtil;
+
+    public ClientRestController(FeignServiceUtil feignServiceUtil) {
+        this.feignServiceUtil = feignServiceUtil;
+    }
 
     @GetMapping("/books")
     public List<Book> getAllBooksFromClient() {

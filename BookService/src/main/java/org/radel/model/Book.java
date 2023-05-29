@@ -1,4 +1,4 @@
-package model;
+package org.radel.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,13 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Builder
 @AllArgsConstructor
-//@Document(collection = "books")
-@Document
+@Document(collection = "books")
 public class Book {
     @Id
     private String id;
     private String title;
     private String description;
     private String imageLink;
-
 }
