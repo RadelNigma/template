@@ -2,7 +2,6 @@ package org.radel.restcontroller;
 
 import org.radel.model.Book;
 import org.radel.service.BookServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api")
 public class BookRestController {
 
     private final BookServiceImpl bookService;
@@ -19,7 +18,7 @@ public class BookRestController {
         this.bookService = bookService;
     }
 
-    @GetMapping("books")
+    @GetMapping("/books")
     public List<Book> getAllBooks() {
         return bookService.findAll();
     }

@@ -17,7 +17,7 @@ public class BookServiceImpl implements BookService {
         this.bookRepo = bookRepo;
     }
 
-    private static List<Book> items = new ArrayList<>();
+    private static final List<Book> items = new ArrayList<>();
 
     static {
         items.add(new Book("1", "Мастер и Маргарита", "драма", "sss"));
@@ -30,9 +30,9 @@ public class BookServiceImpl implements BookService {
         return bookRepo.findAll();
     }
 
-//    @PostConstruct
-//    public void init() {
-//        bookRepo.saveAll(items);
-//    }
+    @PostConstruct
+    public void init() {
+        bookRepo.saveAll(items);
+    }
 }
 

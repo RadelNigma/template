@@ -1,4 +1,4 @@
-package model;
+package org.radel.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
