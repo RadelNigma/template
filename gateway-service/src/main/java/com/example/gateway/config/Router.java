@@ -17,6 +17,10 @@ public class Router {
                 .route("client", r -> r.path("/api/client/**")
                         .filters(f -> f.filter(filter))
                         .uri("lb://EUREKA-CLIENT"))
+                .route("client-update",r -> r.path("/api/update/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("lb://CLIENT-UPDATE"))
                 .build();
     }
+
 }
