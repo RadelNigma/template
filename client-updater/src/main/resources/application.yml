@@ -1,6 +1,6 @@
 spring:
   application:
-    name: client-updater
+    name: client-update
 server:
   port: 8870
 eureka:

@@ -1,6 +1,8 @@
 spring:
   application:
     name: eureka-client
+  main:
+    allow-bean-definition-overriding: true
 server:
   port: 8868
 eureka:
@@ -10,7 +12,9 @@ eureka:
     eureka-service-url-poll-interval-seconds: 35 # 3 укажите интервал в 35 сек через который клиент шлет эхо запрос на сервер
   instance:
     preferIpAddress: true # 2 использовать IP адрес
-
+feign:
+  circuitbreaker:
+    enabled: true
 #spring:
 #  application:
 #    name: eureka-client

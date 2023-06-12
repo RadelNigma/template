@@ -1,5 +1,6 @@
 package org.radel.restcontroller;
 
+import org.radel.feign.Feign;
 import org.radel.feign.FeignServiceUtil;
 import org.radel.model.Book;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +15,30 @@ public class ClientRestController {
 
     private final FeignServiceUtil feignServiceUtil;
 
-    public ClientRestController(FeignServiceUtil feignServiceUtil) {
+private final Feign feign;
+
+//    public ClientRestController(Feign feign) {
+//        this.feign = feign;
+//    }
+
+
+    public ClientRestController(FeignServiceUtil feignServiceUtil, Feign feign) {
         this.feignServiceUtil = feignServiceUtil;
+
+        this.feign = feign;
+    }
+
+
+
+
+    @GetMapping("/feignServiceUtil")
+    public List<Book> getAllBooksFromClient() {
+        return feignServiceUtil.getAllBooks();
     }
 
     @GetMapping("/feign")
-    public List<Book> getAllBooksFromClient() {
-        return feignServiceUtil.getAllBooks();
+    public List<Book> getAllBooksFromClient1() {
+        return feign.getAllBooks();
     }
 
     @GetMapping("/test")
